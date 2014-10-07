@@ -1,0 +1,63 @@
+=> Homebrew
+Homebrew 0.9.5
+Please note that these warnings are just used to help the Homebrew maintainers
+with debugging if you file an issue. If everything you use Homebrew for is
+working fine: please don't worry and just ignore them. Thanks!
+
+
+=> Shell
+/usr/local/bin/fish
+/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
+
+=> Sublime Text
+Sublime Text 2 Build 2221
+// Settings in here override those in "Default/Preferences.sublime-settings", and
+// are overridden in turn by file type specific settings.
+{
+}
+
+=> Ruby
+ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin13]
+IRB.conf[:PROMPT_MODE] = :SIMPLE
+IRB.conf[:AUTO_INDENT] = true
+
+=> Git
+git version 1.9.3 (Apple Git-50)
+alias.br=branch
+alias.c=commit -m
+alias.ca=commit --amend --reuse-message=HEAD
+alias.ci=commit --verbose
+alias.co=checkout
+alias.df=diff HEAD
+alias.dfs=diff --staged
+alias.la=log --patch --stat --pretty=format:"%C(bold red)%h %Cgreen%cr %Cblue%cn%C(yellow)%d %Creset%s"
+alias.ll=log --pretty=format:"%Cred%h %>(11,trunc)%Cgreen%cr %<(10,trunc)%Cblue%cn%C(yellow)%d %Creset%s"
+alias.rmb=!sh -c "git branch -D $1 && git push origin :$1" -
+alias.st=status --short --branch
+branch.master.merge=refs/heads/master
+branch.master.remote=origin
+color.branch.current=yellow reverse
+color.branch.local=yellow
+color.branch.remote=green
+color.branch.upstream=cyan
+color.diff.frag=magenta bold
+color.diff.func=normal bold
+color.diff.meta=yellow bold
+color.diff.new=green bold
+color.diff.old=red bold
+color.status.added=green bold
+color.status.branch=yellow
+color.status.changed=yellow bold
+color.status.untracked=cyan bold
+core.bare=false
+core.filemode=true
+core.ignorecase=true
+core.logallrefupdates=true
+core.precomposeunicode=true
+core.repositoryformatversion=0
+credential.helper=osxkeychain
+push.default=simple
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+remote.origin.url=https://github.com/robertwhaskell/sea-c21-ruby.git
+user.email=robertwhaskell@gmail.com
+user.name=Robert
