@@ -1,13 +1,10 @@
 => Homebrew
 Homebrew 0.9.5
-Please note that these warnings are just used to help the Homebrew maintainers
-with debugging if you file an issue. If everything you use Homebrew for is
-working fine: please don't worry and just ignore them. Thanks!
-
+Your system is ready to brew.
 
 => Shell
 /usr/local/bin/fish
-/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin::/usr/local/git/bin
 
 => Sublime Text
 Sublime Text 2 Build 2221
@@ -17,12 +14,12 @@ Sublime Text 2 Build 2221
 }
 
 => Ruby
-ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin13]
+ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-darwin13.0]
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 IRB.conf[:AUTO_INDENT] = true
 
 => Git
-git version 1.9.3 (Apple Git-50)
+git version 2.1.2
 alias.br=branch
 alias.c=commit -m
 alias.ca=commit --amend --reuse-message=HEAD
@@ -59,5 +56,7 @@ credential.helper=osxkeychain
 push.default=simple
 remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 remote.origin.url=https://github.com/robertwhaskell/sea-c21-ruby.git
+remote.upstream.fetch=+refs/heads/*:refs/remotes/upstream/*
+remote.upstream.url=https://github.com/codefellows/sea-c21-ruby.git
 user.email=robertwhaskell@gmail.com
 user.name=Robert
