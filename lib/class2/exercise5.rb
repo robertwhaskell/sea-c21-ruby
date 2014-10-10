@@ -9,6 +9,7 @@
 #   What's your favorite number?
 #   42
 #   That's ok, I guess, but isn't 43 just a bit better?
+
 puts "What's your favorite number?"
 number = gets.chomp
 number = number.to_i + 1

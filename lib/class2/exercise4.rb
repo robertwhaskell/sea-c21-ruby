@@ -6,6 +6,7 @@
 # Here's how the program must work:
 #
 #   $ ruby exercise4.rb
+
 puts "What's your first name?"
 first = gets.chomp
 puts "What's your middle name?"
