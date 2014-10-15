@@ -8,3 +8,5 @@
 # divisible by 400 (e.g. 2000).
 #
 # Tip: I expect you to use a loop and a few modulo operations.
+
+(1900..2000).each { |i| puts i if i % 400 == 0 || i % 4 == 0 && i % 100 != 0 }
