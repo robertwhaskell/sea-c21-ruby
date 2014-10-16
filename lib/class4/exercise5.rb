@@ -32,8 +32,47 @@
 # TIP #3: You only need to change the `modern_roman_numeral` method.
 
 # rubocop:disable MethodLength
+
+def helper1(num, mult, letter1, letter2)
+  numerals = ''
+  (num / (5 * mult)).times { numerals += letter1 }
+  num %= (5 * mult)
+  (num / (1 * mult)).times { numerals += letter2 }
+  numerals
+end
+
+def helper2(num, div, letter1, letter2)
+  numerals = ''
+  if num / div == 9
+    numerals += letter1
+  elsif num / div == 4
+    numerals += letter2
+  end
+  numerals
+end
+
 def modern_roman_numeral(num)
-  num # change me
+  numerals = ''
+  (num / 1000).times { numerals += 'M' }
+  num %= 1000
+  if num / 100 == 9 || num / 100 == 4
+    numerals += helper2(num, 100, 'CM', 'CD')
+  else
+    numerals += helper1(num, 100, 'D', 'C')
+  end
+  num %= 100
+  if num / 10 == 9 || num / 10 == 4
+    numerals += helper2(num, 10, 'XC', 'XL')
+  else
+    numerals += helper1(num, 10, 'L', 'X')
+  end
+  num %= 10
+  if num / 1 == 9 || num / 1 == 4
+    numerals += helper2(num, 1, 'IX', 'IV')
+  else
+    numerals += helper1(num, 1, 'V', 'I')
+  end
+  numerals
 end
 
 input = ARGV[0].to_i

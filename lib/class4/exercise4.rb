@@ -28,7 +28,21 @@
 
 # rubocop:disable MethodLength
 def old_school_roman_numeral(num)
-  num # change me
+  numerals = ''
+  (num / 1000).times { numerals += 'M' }
+  num %= 1000
+  (num / 500).times { numerals += 'D' }
+  num %= 500
+  (num / 100).times { numerals += 'C' }
+  num %= 100
+  (num / 50).times { numerals += 'L' }
+  num %= 50
+  (num / 10).times { numerals += 'X' }
+  num %= 10
+  (num / 5).times { numerals += 'V' }
+  num %= 5
+  num.times { numerals += 'I' }
+  numerals
 end
 
 input = ARGV[0].to_i

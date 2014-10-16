@@ -35,3 +35,15 @@
 #     Returns a new Array created by sorting `array`.
 #
 #     ['cat', 'bird'].sort  #=> ['bird', 'cat']
+
+puts 'Type some words to be sorted alphabetically:'
+arr = []
+
+loop do
+  reply = gets.chomp
+  break if reply == ''
+  arr.push(reply)
+end
+
+puts 'Sweet! Here they are in alphabetical order:'
+puts arr.sort
