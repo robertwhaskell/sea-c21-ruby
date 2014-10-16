@@ -51,27 +51,25 @@ def helper2(num, div, letter1, letter2)
   numerals
 end
 
+def helper3(num, div, letters)
+  numerals = ''
+  if num / div == 9 || num / div == 4
+    numerals += helper2(num, div, letters[0], letters[1])
+  else
+    numerals += helper1(num, div, letters[2], letters[3])
+  end
+  numerals
+end
+
 def modern_roman_numeral(num)
   numerals = ''
   (num / 1000).times { numerals += 'M' }
   num %= 1000
-  if num / 100 == 9 || num / 100 == 4
-    numerals += helper2(num, 100, 'CM', 'CD')
-  else
-    numerals += helper1(num, 100, 'D', 'C')
-  end
+  numerals += helper3(num, 100, %w(CM CD D C))
   num %= 100
-  if num / 10 == 9 || num / 10 == 4
-    numerals += helper2(num, 10, 'XC', 'XL')
-  else
-    numerals += helper1(num, 10, 'L', 'X')
-  end
+  numerals += helper3(num, 10, %w(XC XL L X))
   num %= 10
-  if num / 1 == 9 || num / 1 == 4
-    numerals += helper2(num, 1, 'IX', 'IV')
-  else
-    numerals += helper1(num, 1, 'V', 'I')
-  end
+  numerals += helper3(num, 1, %w(IX IV V I))
   numerals
 end
 
