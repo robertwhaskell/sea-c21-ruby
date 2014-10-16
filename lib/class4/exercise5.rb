@@ -32,8 +32,43 @@
 # TIP #3: You only need to change the `modern_roman_numeral` method.
 
 # rubocop:disable MethodLength
+
 def modern_roman_numeral(num)
-  num # change me
+  numerals = ''
+  (num / 1000).times{numerals += 'M'}
+  num %= 1000
+  if(num / 100 == 9)
+    numerals += 'CM'
+    num %= 900
+  elsif (num / 100 == 4)
+    numerals += 'CD'
+    num %= 400
+    else
+    (num / 500).times{numerals += 'D'}
+    num %= 500
+    (num / 100).times{numerals += 'C'}
+    num %= 100
+  end
+  if (num / 10 == 90)
+    numerals += 'XC'
+    num %= 90
+  elsif (num / 10 == 40)
+    numerals += 'XL'
+    num %= 40
+  else
+    (num / 50).time{numerals += 'L'}
+    num %= 50
+    (num / 10).times{numerals += 'X'}
+    num %= 10
+  end
+  if (num == 9)
+    numerals += 'IX'
+  elsif (num == 5)
+    numerals += 'IV'
+  else
+    num.times{numerals += 'I'}
+  end
+  numerals
 end
 
 input = ARGV[0].to_i
