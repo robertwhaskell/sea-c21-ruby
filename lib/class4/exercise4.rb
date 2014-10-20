@@ -30,26 +30,19 @@
 
 def old_school_roman_numeral(num)
   numerals = ''
-  (num / 1000).times { numerals += 'M' }
-  num %= 1000
-  (num / 500).times { numerals += 'D' }
-  num %= 500
-  (num / 100).times { numerals += 'C' }
-  num %= 100
-<<<<<<< HEAD
-  (num / 50).time { numerals += 'L' }
-  num %= 50
-  (num / 10).times { numerals += 'X' }
-  num %= 10
-=======
-  (num / 50).times { numerals += 'L' }
-  num %= 50
-  (num / 10).times { numerals += 'X' }
-  num %= 10
-  (num / 5).times { numerals += 'V' }
-  num %= 5
->>>>>>> 7b57f9e1e562839b30b088f1be229932f4bc7df4
-  num.times { numerals += 'I' }
+  numerals_map = {
+    1000 => 'M',
+    500 => 'D',
+    100 => 'C',
+    50 => 'L',
+    10 => 'X',
+    5 => 'V',
+    1 => 'I'
+  }
+  numerals_map.keys.each do |key|
+    numerals += numerals_map[key] * (num / key)
+    num %= key
+  end
   numerals
 end
 
