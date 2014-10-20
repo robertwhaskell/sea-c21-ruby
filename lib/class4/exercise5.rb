@@ -35,38 +35,38 @@
 
 def modern_roman_numeral(num)
   numerals = ''
-  (num / 1000).times{numerals += 'M'}
+  (num / 1000).times { numerals += 'M' }
   num %= 1000
-  if(num / 100 == 9)
+  if num / 100 == 9
     numerals += 'CM'
     num %= 900
-  elsif (num / 100 == 4)
+  elsif num / 100 == 4
     numerals += 'CD'
     num %= 400
     else
-    (num / 500).times{numerals += 'D'}
-    num %= 500
-    (num / 100).times{numerals += 'C'}
-    num %= 100
+      (num / 500).times { numerals += 'D' }
+      num %= 500
+      (num / 100).times { numerals += 'C' }
+      num %= 100
   end
-  if (num / 10 == 90)
+  if num / 10 == 90
     numerals += 'XC'
     num %= 90
-  elsif (num / 10 == 40)
+  elsif num / 10 == 40
     numerals += 'XL'
     num %= 40
   else
-    (num / 50).time{numerals += 'L'}
+    (num / 50).time { numerals += 'L' }
     num %= 50
-    (num / 10).times{numerals += 'X'}
+    (num / 10).times { numerals += 'X' }
     num %= 10
   end
-  if (num == 9)
+  if num == 9
     numerals += 'IX'
-  elsif (num == 5)
+  elsif num == 5
     numerals += 'IV'
   else
-    num.times{numerals += 'I'}
+    num.times { numerals += 'I' }
   end
   numerals
 end
