@@ -36,9 +36,16 @@ def ask(question)
   loop do
     puts question
     reply = gets.chomp
+<<<<<<< HEAD
     return 'We can be friends!' if reply.downcase == 'y'
     return 'Get out of my sight!' if reply.downcase == 'n'
       puts "Try again"
+=======
+    return 'We can be friends!' if reply == 'y'
+    return 'Get out of my sight!' if reply == 'n'
+    puts 'Try again'
+  end
+>>>>>>> 7b57f9e1e562839b30b088f1be229932f4bc7df4
 end
 
 puts ask('Do you like eating tacos? (y or n)')

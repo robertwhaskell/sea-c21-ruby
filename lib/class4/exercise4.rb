@@ -36,10 +36,19 @@ def old_school_roman_numeral(num)
   num %= 500
   (num / 100).times { numerals += 'C' }
   num %= 100
+<<<<<<< HEAD
   (num / 50).time { numerals += 'L' }
   num %= 50
   (num / 10).times { numerals += 'X' }
   num %= 10
+=======
+  (num / 50).times { numerals += 'L' }
+  num %= 50
+  (num / 10).times { numerals += 'X' }
+  num %= 10
+  (num / 5).times { numerals += 'V' }
+  num %= 5
+>>>>>>> 7b57f9e1e562839b30b088f1be229932f4bc7df4
   num.times { numerals += 'I' }
   numerals
 end
