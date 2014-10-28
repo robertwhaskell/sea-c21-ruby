@@ -16,5 +16,9 @@
 #     orange_tree.fruit  #=> 50
 
 class OrangeTree
-  # fix me
+  attr_reader :fruit
+
+  def initialize
+    @fruit = 50
+  end
 end

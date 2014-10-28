@@ -47,28 +47,51 @@
 
 class Integer
   def hours_in_seconds
-    # replace me
+    self * 60 * 60
   end
 end
 
 class String
   def indent(amount = 2)
-    amount # replace me
+    indentation = ''
+    amount.times { indentation << ' ' }
+    indentation << self
   end
 end
 
 class Integer
   def to_roman
-    # replace me
+    num = self
+    numerals = ''
+    numerals_map = {
+      1000 => 'M',
+      900 => 'CM',
+      500 => 'D',
+      400 => 'CD',
+      100 => 'C',
+      90 => 'XC',
+      50 => 'L',
+      40 => 'XL',
+      10 => 'X',
+      9 => 'IX',
+      5 => 'V',
+      4 => 'IV',
+      1 => 'I'
+    }
+    numerals_map.keys.each do |key|
+      numerals += numerals_map[key] * (num / key)
+      num %= key
+    end
+    numerals
   end
 end
 
 class Array
   def second
-    # replace me
+    self[1]
   end
 
   def third
-    # replace me
+    self[2]
   end
 end

@@ -31,8 +31,7 @@ def load
 end
 
 def find(key)
-  return load[key] if load[key]
-  false
+  load[key.to_sym]
 end
 
 input = ARGV[0]
