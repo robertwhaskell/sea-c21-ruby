@@ -41,7 +41,7 @@ def load
 end
 
 def display(pairs)
-  pairs.keys.each { |key| puts "#{key.inspect} => #{pairs[key].inspect}" }
+  pairs.each { |key, value| puts "#{key.inspect} => #{value.inspect}" }
 end
 
 person = load

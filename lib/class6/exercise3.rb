@@ -40,9 +40,7 @@ def database
 end
 
 def save
-  File.open database, 'w' do |f|
-    f.write(person.to_yaml)
-  end
+  File.write(database, person.to_yaml)
 end
 
 save
