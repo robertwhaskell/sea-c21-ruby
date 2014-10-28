@@ -63,24 +63,11 @@ class Integer
   def to_roman
     num = self
     numerals = ''
-    numerals_map = {
-      1000 => 'M',
-      900 => 'CM',
-      500 => 'D',
-      400 => 'CD',
-      100 => 'C',
-      90 => 'XC',
-      50 => 'L',
-      40 => 'XL',
-      10 => 'X',
-      9 => 'IX',
-      5 => 'V',
-      4 => 'IV',
-      1 => 'I'
-    }
-    numerals_map.keys.each do |key|
-      numerals += numerals_map[key] * (num / key)
-      num %= key
+    roman_array = %w(I IV V IX X XL L XC C CD D CM M)
+    arabic_array = %w(1000 900 500 400 100 90 50 40 10 9 5 4 1)
+    arabic_array.each do |divisor|
+      numerals += roman_array.pop * (num / divisor.to_i)
+      num %= divisor.to_i
     end
     numerals
   end
