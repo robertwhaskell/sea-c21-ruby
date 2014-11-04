@@ -31,7 +31,7 @@ def load
 end
 
 def update(key, value)
-  File.write(database, load.merge(key => value).to_yaml)
+  File.write(database, load.merge(key.to_sym => value).to_yaml)
 end
 
 input1, input2 = ARGV
